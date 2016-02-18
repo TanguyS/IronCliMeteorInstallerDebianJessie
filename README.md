@@ -1,8 +1,9 @@
 # Deploy Meteor with Iron Cli on Debian Jessie (Apache 2.4)
 
-**SERVER**
+SERVER
+==
 
-connect with ssh on your server
+connect with ssh on your server  
 
 
 **Install Node**
@@ -10,19 +11,19 @@ connect with ssh on your server
     curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
     apt-get update
     sudo apt-get install -y nodejs
-
+  
 
 **Install Apache**
 
     sudo apt-get apache2
-
+  
 
 **Activate mod proxy (with proxy_wstunnel for websocket)**
 
     a2enmod proxy
     a2enmod proxy_http
     a2enmod proxy_wstunnel
-
+  
 
 **Set mod proxy on your vhost (replace PORT by the PORT of your install)**
 
@@ -39,17 +40,20 @@ connect with ssh on your server
     RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
     RewriteRule .* ws://localhost:PORT%{REQUEST_URI} [P]
 
-
+  
 **Install forever globally**
 
     sudo npm install forever -g
+  
 
+**Install MongoDB and anything you need**  
 
-**Install MongoDB and anything you need**
-
-
-
-**LOCAL**
+  
+  
+  
+  
+LOCAL
+==
 
 **fill your env.sh**
 
