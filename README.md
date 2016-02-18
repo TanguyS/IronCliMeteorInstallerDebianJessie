@@ -1,21 +1,27 @@
 # Deploy Meteor with Iron Cli on Debian Jessie (Apache 2.4)
 
+Why did I create this process?
+I tried mup, mupx, Passenger and all were failing for a reason or another.
+So, I did my own install script since there is not so much documentation on how you can use Debian & Apache to deploy your Meteor App. Probably working on other distro, but mup may do the job better.
+
+This support Meteor.settings (which is not the case apparently of passenger), is multi-stage (with some little tweaks. I will provide soon an update for this) and work with websockets.
+
 SERVER
 ==
 
-connect with ssh on your server  
+connect with ssh on your server (the following assumes you're root, if not use sudo)
 
 
 **Install Node**
 
     curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
     apt-get update
-    sudo apt-get install -y nodejs
+    apt-get install -y nodejs
   
 
 **Install Apache**
 
-    sudo apt-get apache2
+    apt-get apache2
   
 
 **Activate mod proxy (with proxy_wstunnel for websocket)**
@@ -43,7 +49,7 @@ connect with ssh on your server
   
 **Install forever globally**
 
-    sudo npm install forever -g
+    npm install forever -g
   
 
 **Install MongoDB and anything you need**  
