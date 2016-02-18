@@ -2,7 +2,7 @@
 
 **SERVER**
 
-    connect with ssh on your server
+connect with ssh on your server
 
 
 **Install Node**
