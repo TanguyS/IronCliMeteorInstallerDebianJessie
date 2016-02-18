@@ -25,7 +25,7 @@ connect with ssh on your server
     a2enmod proxy_wstunnel
   
 
-**Set mod proxy on your vhost (replace PORT by the PORT of your install)**
+**Set mod proxy on your vhost (replace PORT by the PORT of your install). Working by setting this in options/apache directives field of ISP config 3**
 
     ProxyRequests off
     <Proxy *>
