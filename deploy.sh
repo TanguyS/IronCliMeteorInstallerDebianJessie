@@ -46,11 +46,11 @@ scp ./build/$TARGZ_NAME $REMOTE:$DIR
 echo '---------------------'
 echo 'INSTALL'
 echo '---------------------'
-# install production with force and fibers@1.0.7 in case fibers 1.0.5 fails 
+# install production with force and fibers
 CMD="
 cd $DIR && tar xfz $TARGZ_NAME
 rm -rf $DIR/build/bundle/programs/server/npm/npm-bcrypt
-cd $DIR/build/bundle/programs/server && npm install --production --force && npm install bcrypt && npm install fibers@1.0.7
+cd $DIR/build/bundle/programs/server && npm install --production --force && npm install bcrypt && npm install fibers
 "
 # mkdir -p $DIR/tmp $DIR/public
 # cd $DIR && touch tmp/restart.txt
